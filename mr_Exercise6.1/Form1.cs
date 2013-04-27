@@ -46,6 +46,11 @@ namespace mr_Exercise6._1
             {
                 klok.Instellen24Uur(-1);
                 lblHour.Text = Convert.ToString(klok.ToonUren24());
+
+                if (klok.ToonUren24() <= 0)
+                {
+                    klok.Uren24 = 24;
+                }
             }
             
             else
@@ -53,17 +58,7 @@ namespace mr_Exercise6._1
                 klok.Instellen12Uur(-1);
                 lblHour.Text = Convert.ToString(klok.ToonUren12());
                 lblAmPm.Text = klok.ToonAMPM();
-            }
 
-            if (cboAmPm.Checked)
-            {
-                if (klok.ToonUren24() <= 0)
-                {
-                    klok.Uren24 = 24;
-                }
-            }
-            else
-            {
                 if (klok.ToonUren12() <= 1)
                 {
                     klok.Uren12 = 13;

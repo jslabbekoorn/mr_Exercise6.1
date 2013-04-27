@@ -24,7 +24,7 @@ namespace mr_Exercise6._1
             this.strVorm = strVorm;
             this.intHoogte = intHoogte;
             this.intBreedte = intBreedte;
-            this.strAMPM = "AM";
+            this.AMPM = strAMPM;
             this.Uren12 = intUren12;
             this.Uren24 = intUren24;
             this.Minuten = intMinuten;
@@ -49,6 +49,11 @@ namespace mr_Exercise6._1
         public int Seconden
         {
             set { intSeconden = value; }
+        }
+
+        public string AMPM
+        {
+            set { strAMPM = value; }
         }
 
 
