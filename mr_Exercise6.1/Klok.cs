@@ -53,14 +53,14 @@ namespace mr_Exercise6._1
 
         public string KlokSlag()
         {
-            string boodschap = "";
+            string strBoodschap = "";
 
             if (intMinuten == 0 && intSeconden == 0)
             {
-                boodschap = "BIM BAM";
+                strBoodschap = "BIM! BAM!";
             }
 
-            return boodschap;
+            return strBoodschap;
         }
 
 

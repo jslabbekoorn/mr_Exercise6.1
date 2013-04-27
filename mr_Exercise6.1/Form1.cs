@@ -22,7 +22,7 @@ namespace mr_Exercise6._1
 
         private void frmKlok_Load(object sender, EventArgs e)
         {
-            klok = new Klok("Zwart", "Vierkant", 4, 4);    
+            klok = new Klok("Zwart", "Vierkant", 4, 4);
         }
 
         private void btnPlusHour_Click(object sender, EventArgs e)
@@ -70,6 +70,12 @@ namespace mr_Exercise6._1
         {
             klok.InstellenMinuut(1);
             lblMin.Text = Convert.ToString(klok.ToonMinuten());
+
+            if (klok.KlokSlag() != "")
+            {
+                MessageBox.Show(klok.KlokSlag());
+            }
+            
         }
 
         private void btnMinMin_Click(object sender, EventArgs e)
@@ -81,12 +87,22 @@ namespace mr_Exercise6._1
             {
                 klok.Minuten = 60;
             }
+
+            if (klok.KlokSlag() != "")
+            {
+                MessageBox.Show(klok.KlokSlag());
+            }
         }
 
         private void btnPlusSec_Click(object sender, EventArgs e)
         {
             klok.InstellenSeconde(1);
             lblSec.Text = Convert.ToString(klok.ToonSeconden());
+
+            if (klok.KlokSlag() != "")
+            {
+                MessageBox.Show(klok.KlokSlag());
+            }
         }
 
         private void btnMinSec_Click(object sender, EventArgs e)
@@ -97,6 +113,11 @@ namespace mr_Exercise6._1
             if (klok.ToonSeconden() < 1)
             {
                 klok.Seconden = 60;
+            }
+
+            if (klok.KlokSlag() != "")
+            {
+                MessageBox.Show(klok.KlokSlag());
             }
 
         }
@@ -111,6 +132,11 @@ namespace mr_Exercise6._1
             {
                 lblAmPm.Text = klok.ToonAMPM();
             }
+        }
+
+        private void frmKlok_BackColorChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
