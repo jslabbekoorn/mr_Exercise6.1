@@ -38,8 +38,20 @@ namespace mr_Exercise6._1
 
         public int Uren24
         {
-            set { intUren24 = value; }
+            set
+            {
+                if (value > 23 || value < 0)
+                {
+                    intUren24 = 0;
+                }
+                else
+                {
+                    intUren24 = value;
+                }
+            }
+            get { return intUren24; }
         }
+
 
         public int Minuten
         {
@@ -85,18 +97,18 @@ namespace mr_Exercise6._1
 
         public void Instellen24Uur(int uren24)
         {
-            intUren24 += uren24;
+            Uren24 += uren24;
 
             if (uren24 <= 24)
             {
-                if (intUren24 > 24)
+                if (Uren24 > 24)
                 {
-                    intUren24 = intUren24 - 24;
+                    Uren24 = Uren24 - 24;
                 }
             }
             else
             {
-                intUren24 = 0;
+                Uren24 = 0;
             }
         }
 
@@ -144,7 +156,7 @@ namespace mr_Exercise6._1
 
         public int ToonUren24()
         {
-            return intUren24;
+            return Uren24;
         }
 
         public int ToonMinuten()

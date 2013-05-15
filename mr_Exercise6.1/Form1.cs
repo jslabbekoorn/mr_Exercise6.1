@@ -133,10 +133,5 @@ namespace mr_Exercise6._1
                 lblAmPm.Text = klok.ToonAMPM();
             }
         }
-
-        private void frmKlok_BackColorChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
