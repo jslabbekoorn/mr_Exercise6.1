@@ -33,7 +33,26 @@ namespace mr_Exercise6._1
 
         public int Uren12
         {
-            set { intUren12 = value; }
+            set {
+                    if (value > 12 || value < 0)
+                    {
+                        if (value > 12)
+                        {
+                            intUren12 = 1;
+                        }
+
+                        if (value < 0)
+                        {
+                            intUren12 = 11;
+                        }
+                    }
+                    else
+                    {
+                        intUren12 = value;
+                    }
+                }
+
+            get { return intUren12; }
         }
 
         public int Uren24
@@ -42,25 +61,74 @@ namespace mr_Exercise6._1
             {
                 if (value > 23 || value < 0)
                 {
-                    intUren24 = 0;
+                    if (value > 23)
+                    {
+                        intUren24 = 0;
+                    }
+
+                    if (value < 0)
+                    {
+                        intUren24 = 23;
+                    }
                 }
                 else
                 {
                     intUren24 = value;
                 }
             }
+
             get { return intUren24; }
         }
 
 
         public int Minuten
         {
-            set { intMinuten = value; }
+            set 
+            {
+                if (value > 59 || value < 0)
+                {
+                    if (value > 59)
+                    {
+                        intMinuten = 0;
+                    }
+
+                    if (value < 0)
+                    {
+                        intMinuten = 59;
+                    }
+                }
+                else
+                {
+                    intMinuten = value;
+                }
+            }
+            
+            get { return intMinuten; }
         }
 
         public int Seconden
         {
-            set { intSeconden = value; }
+            set
+            {
+                if (value > 59 || value < 0)
+                {
+                    if (value > 59)
+                    {
+                        intSeconden = 0;
+                    }
+
+                    if (value < 0)
+                    {
+                        intSeconden = 59;
+                    }
+                }
+                else
+                {
+                    intSeconden = value;
+                }
+            }
+
+            get { return intSeconden; }
         }
 
         public string KlokSlag()
@@ -78,19 +146,19 @@ namespace mr_Exercise6._1
 
         public void Instellen12Uur(int uren12)
         {
-            intUren12 += uren12;
+            Uren12 += uren12;
 
             if (uren12 <= 12)
             {
-                if (intUren12 > 12)
+                if (Uren12 > 12)
                 {
-                    intUren12 = intUren12 - 12;
+                    Uren12 = Uren12 - 12;
                     strAMPM = "PM";
                 }
             }
             else
             {
-                intUren12 = 0;
+                Uren12 = 0;
             }
         }
 
@@ -115,31 +183,31 @@ namespace mr_Exercise6._1
 
         public void InstellenMinuut(int minuten)
         {
-            intMinuten = intMinuten + minuten;
+            Minuten = Minuten + minuten;
 
             if (minuten < 60)
             {
-                if (intMinuten > 59)
+                if (Minuten > 59)
                 {
-                    intMinuten = intMinuten - 60;
+                    Minuten = Minuten - 60;
                 }
 
             }
             else
             {
-                intMinuten = 0;
+                Minuten = 0;
             }
         }
 
         public void InstellenSeconde(int seconde)
         {
-            intSeconden = intSeconden + seconde;
+            Seconden = Seconden + seconde;
 
             if (seconde < 60)
             {
-                if (intSeconden > 59)
+                if (Seconden > 59)
                 {
-                    intSeconden = intSeconden - 60;
+                    Seconden = Seconden - 60;
                 }
 
             }
