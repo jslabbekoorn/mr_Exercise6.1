@@ -30,12 +30,12 @@ namespace mr_Exercise6._1
             if (cboAmPm.Checked)
             {
                 klok.Instellen24Uur(1);
-                lblHour.Text = Convert.ToString(klok.ToonUren24());
+                lblHour.Text = Convert.ToString(klok.Uren24);
             }
             else
             {
                 klok.Instellen12Uur(1);
-                lblHour.Text = Convert.ToString(klok.ToonUren12());
+                lblHour.Text = Convert.ToString(klok.Uren12);
                 lblAmPm.Text = klok.ToonAMPM();
             }
         }
@@ -45,9 +45,9 @@ namespace mr_Exercise6._1
             if (cboAmPm.Checked)
             {
                 klok.Instellen24Uur(-1);
-                lblHour.Text = Convert.ToString(klok.ToonUren24());
+                lblHour.Text = Convert.ToString(klok.Uren24);
 
-                if (klok.ToonUren24() <= 0)
+                if (klok.Uren24 <= 0)
                 {
                     klok.Uren24 = 24;
                 }
@@ -56,10 +56,10 @@ namespace mr_Exercise6._1
             else
             {
                 klok.Instellen12Uur(-1);
-                lblHour.Text = Convert.ToString(klok.ToonUren12());
+                lblHour.Text = Convert.ToString(klok.Uren12);
                 lblAmPm.Text = klok.ToonAMPM();
 
-                if (klok.ToonUren12() <= 1)
+                if (klok.Uren12 <= 1)
                 {
                     klok.Uren12 = 13;
                 }
@@ -69,7 +69,7 @@ namespace mr_Exercise6._1
         private void btnPlusMin_Click(object sender, EventArgs e)
         {
             klok.InstellenMinuut(1);
-            lblMin.Text = Convert.ToString(klok.ToonMinuten());
+            lblMin.Text = Convert.ToString(klok.Minuten);
 
             if (klok.KlokSlag() != "")
             {
@@ -81,9 +81,9 @@ namespace mr_Exercise6._1
         private void btnMinMin_Click(object sender, EventArgs e)
         {
             klok.InstellenMinuut(-1);
-            lblMin.Text = Convert.ToString(klok.ToonMinuten());
+            lblMin.Text = Convert.ToString(klok.Minuten);
 
-            if (klok.ToonMinuten() < 1)
+            if (klok.Minuten < 1)
             {
                 klok.Minuten = 60;
             }
@@ -97,7 +97,7 @@ namespace mr_Exercise6._1
         private void btnPlusSec_Click(object sender, EventArgs e)
         {
             klok.InstellenSeconde(1);
-            lblSec.Text = Convert.ToString(klok.ToonSeconden());
+            lblSec.Text = Convert.ToString(klok.Seconden);
 
             if (klok.KlokSlag() != "")
             {
@@ -108,9 +108,9 @@ namespace mr_Exercise6._1
         private void btnMinSec_Click(object sender, EventArgs e)
         {
             klok.InstellenSeconde(-1);
-            lblSec.Text = Convert.ToString(klok.ToonSeconden());
+            lblSec.Text = Convert.ToString(klok.Seconden);
 
-            if (klok.ToonSeconden() < 1)
+            if (klok.Seconden < 1)
             {
                 klok.Seconden = 60;
             }

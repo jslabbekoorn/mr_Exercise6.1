@@ -217,26 +217,6 @@ namespace mr_Exercise6._1
             }
         }
 
-        public int ToonUren12()
-        {
-            return intUren12;
-        }
-
-        public int ToonUren24()
-        {
-            return Uren24;
-        }
-
-        public int ToonMinuten()
-        {
-            return intMinuten;
-        }
-
-        public int ToonSeconden()
-        {
-            return intSeconden;
-        }
-
         public string ToonAMPM()
         {
             return strAMPM;
